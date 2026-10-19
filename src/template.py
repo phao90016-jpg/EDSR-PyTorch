@@ -51,3 +51,19 @@ def set_template(args):
         args.patch_size = 41
         args.lr = 1e-1
 
+
+    # --- RTSR (WCNC 2023) Table I presets ---
+    if args.template.find('RTSR_M1') >= 0:
+        args.model = 'EDSR'
+        args.n_resblocks = 8
+        args.n_feats = 9
+
+    if args.template.find('RTSR_M2') >= 0:
+        args.model = 'EDSR'
+        args.n_resblocks = 8
+        args.n_feats = 26
+
+    if args.template.find('RTSR_M3') >= 0:
+        args.model = 'EDSR'
+        args.n_resblocks = 16
+        args.n_feats = 64

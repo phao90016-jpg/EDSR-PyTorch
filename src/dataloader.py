@@ -8,7 +8,7 @@ from torch.utils.data import SequentialSampler
 from torch.utils.data import RandomSampler
 from torch.utils.data import BatchSampler
 from torch.utils.data import _utils
-from torch.utils.data.dataloader import _DataLoaderIter
+from torch.utils.data.dataloader import _BaseDataLoaderIter as _DataLoaderIter
 
 from torch.utils.data._utils import collate
 from torch.utils.data._utils import signal_handling
@@ -17,7 +17,7 @@ from torch.utils.data._utils import ExceptionWrapper
 from torch.utils.data._utils import IS_WINDOWS
 from torch.utils.data._utils.worker import ManagerWatchdog
 
-from torch._six import queue
+import queue
 
 def _ms_loop(dataset, index_queue, data_queue, done_event, collate_fn, scale, seed, init_fn, worker_id):
     try:
