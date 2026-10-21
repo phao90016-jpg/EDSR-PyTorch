@@ -64,3 +64,7 @@ target/
 *.txt
 *.swp
 .vscode
+
+# local datasets and run outputs
+dataset/
+experiment_*/
